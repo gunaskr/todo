@@ -1,0 +1,138 @@
+# this is an example of the Uber API
+# as a demonstration of an API spec in YAML
+swagger: '2.0'
+info:
+  title:  TODO API
+  description: A sample todo api
+  version: "1.0.0"
+# the domain of the service
+host: com.sample.todo
+# array of all schemes that your API supports
+schemes:
+  - https
+# will be prefixed to all paths
+basePath: /
+produces:
+  - application/json
+paths:
+  /tasks:
+    get:
+      summary: List of Tasks
+      description: |
+        The end point to get list of tasks
+      tags:
+        - Tasks
+      responses:
+        200:
+          description: An array of tasks
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Task'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: List of Tasks
+      description: |
+        The end point to create a task
+      tags:
+        - Tasks
+      responses:
+        200:
+          description: Created task is returned
+          schema:
+            $ref: '#/definitions/Task'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /tasks/{id}:
+    get:
+      summary: Get a task
+      description: |
+        The end point to get a single task
+      parameters:
+        - name: id
+          in: path
+          description: unique id identifying the task
+          required: true
+          type: number
+      tags:
+        - Tasks
+      responses:
+        200:
+          description: An array of tasks
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Task'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    put:
+      summary: update a task
+      description: |
+        The end point to update task
+      parameters:
+        - name: id
+          in: path
+          description: unique id identifying the task
+          required: true
+          type: number
+      tags:
+        - Tasks
+      responses:
+        200:
+          description: An array of tasks
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Task'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Task:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique identifier 
+      title:
+        type: string
+        description: Title Of the task
+      description:
+        type: string
+        description: Task description
+      createdDate:
+        type: string
+        description: Date of creating the task
+        format: date
+      lastUpdatedDate:
+        type: string
+        description: Date of creating the task
+        format: date
+      taskCompletionDate:
+        type: string
+        description: Date of creating the task
+        format: date
+      done:
+        type: boolean
+        description: status of task completion
+      category:
+        type: string
+        description: category group of particular task
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
