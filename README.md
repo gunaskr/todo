@@ -10,3 +10,6 @@ a sample todo app with springboot and angular2
 <p>6. back to todo root</p>
 <p>7. mvn sping-boot:run </p>
 <p>8. open http://localhost:8090 </p>
+
+<h1>Just to run </h1>
+<p> donwload the jar and run the command java -jar ToDo-0.0.1-SNAPSHOT.JAR</P>
