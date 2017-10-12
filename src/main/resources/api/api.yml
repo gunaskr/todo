@@ -39,6 +39,13 @@ paths:
         The end point to create a task
       tags:
         - Tasks
+      parameters:
+        - in: body
+          name: TaskVO
+          description: The new task body
+          required: true
+          schema:
+             $ref: "#/definitions/Task"
       responses:
         200:
           description: Created task is returned
@@ -82,6 +89,12 @@ paths:
           description: unique id identifying the task
           required: true
           type: number
+        - in: body
+          name: TaskVO
+          description: The new task body
+          required: true
+          schema:
+             $ref: "#/definitions/Task"
       tags:
         - Tasks
       responses:

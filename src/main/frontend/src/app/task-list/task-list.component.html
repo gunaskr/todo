@@ -1,0 +1,6 @@
+<mat-list dense>
+  <mat-list-item *ngFor="let task of _tasks">
+    <span matLine matTooltip="{{task.description}}" [ngStyle]="{'text-decoration': task.done?'line-through':''}">{{ task.title }} </span>
+    <mat-checkbox [(ngModel)]="task.done" [disabled]="true">Done</mat-checkbox>
+  </mat-list-item>
+</mat-list>

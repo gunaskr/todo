@@ -25,9 +25,16 @@ public class Task {
     // task completion date
     private Date taskCompletionDate;
     // completed status
-    private boolean done;
+    private boolean done = false;
     // task category
     private String category;
+
+    /**
+   * Title Of the task
+   * @return title
+  **/public long getId() {
+    return id;
+  }
 
 
    /**
