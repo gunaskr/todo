@@ -12,6 +12,8 @@ import {MatListModule} from '@angular/material';
 import {MatTooltipModule} from '@angular/material';
 import {MatTabsModule} from '@angular/material';
 import { TaskListComponent } from './task-list/task-list.component';
+import {MatSnackBarModule} from '@angular/material';
+import {MatGridListModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { TaskListComponent } from './task-list/task-list.component';
     MatInputModule,
     MatListModule,
     MatTooltipModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSnackBarModule,
+    MatGridListModule
   ],
   providers: [TasksApi],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from './../../todo-client';
 
 @Component({
@@ -11,12 +11,14 @@ export class TaskListComponent implements OnInit {
   @Input()
   set tasks(val) {
     this._tasks = val;
-    if(this.done!==undefined) {
-      this._tasks = this._tasks.filter(e => e.done===this.done);
+    if(this.done && this._tasks) {
+      const check = true? this.done==='Y':false;
+      this._tasks = this._tasks.filter(e => e.done===check);
     }
   }
   public _tasks: Array<Task>;
-  @Input() done:boolean;
+  @Input() done: string;
+  @Output() updateTask = new EventEmitter();
 
   constructor() { }
 

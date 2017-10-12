@@ -65,7 +65,7 @@ paths:
           in: path
           description: unique id identifying the task
           required: true
-          type: number
+          type: string
       tags:
         - Tasks
       responses:

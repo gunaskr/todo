@@ -9,3 +9,4 @@ a sample todo app with springboot and angular2
 <p>5. npm run build</p>
 <p>6. back to todo root</p>
 <p>7. mvn sping-boot:run </p>
+<p>8. open http://localhost:8090 </p>

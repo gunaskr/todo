@@ -1,0 +1,12 @@
+mat-list ::ng-deep {
+  width:40%;
+  border: 1px solid #cdcdcd;
+  border-radius: 2px;
+}
+
+ mat-list-item:nth-child(even) ::ng-deep {
+    background: #CCC;
+}
+mat-list-item:nth-child(odd) ::ng-deep {
+    background: #fff;
+}
